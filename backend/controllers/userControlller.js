@@ -11,10 +11,8 @@ const emailService = require('../services/emailService');
 // @route POST /api/users
 // @access Public
 const registerUser = asyncHandler(async (req, res) => {
-    // Destructure fields
     const { firstName, lastName, email, password } = req.body;
 
-    // Validation
     if (!firstName || !lastName || !email || !password) {
         res.status(400);
         throw new Error('Please add all required fields');
